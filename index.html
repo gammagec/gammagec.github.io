@@ -6,23 +6,72 @@
 <body>
   <h1>Christopher Gammage</h1>
   <p>Senior Software Engineer — AI & Distributed Systems</p>
+  <p>
+    <a href="mailto:gammagec@gmail.com">gammagec@gmail.com</a> |
+    <a href="https://www.linkedin.com/in/christopher-gammage-9b142850/">LinkedIn Profile</a> |
+    <a href="https://github.com/gammagec">GitHub</a> |
+    <a href="/resume.pdf">Resume</a>
+  </p>
 
-  <h2>Projects</h2>
+  <h2>Selected Systems</h2>
   
-  <h3>NotebookLM Interactive Audio System (Google)
+  <h3>NotebookLM Interactive Audio Agent (Google)</h3>
   
   <p>This work is part of Google's NotebookLM product.  <a href="https://notebooklm.google.com">Try it here</a></p>            
+
+  <p><b>The core challenge</b> was enabling users to interrupt AI responses mid-stream
+while maintaining low latency and consistent system behavior. Unlike traditional
+request/response systems, this required coordinating streaming audio output,
+user input, and AI generation pipelines in real time.
+</p>
+
+<p>
+To support this, I built a node-based orchestration system that allowed
+components in the pipeline to be dynamically swapped without breaking
+dependencies. This enabled rapid iteration in a fast-moving research
+environment while maintaining production stability at scale.
+</p>
+
+<p><b>Key design considerations:</b></p>
+<ul>
+  <li>Interruptible streaming: handling mid-response cancellation and recovery</li>
+  <li>Low-latency pipelines: minimizing delay across audio, network, and AI processing</li>
+  <li>Dynamic composition: enabling flexible agent behavior without redeploying systems</li>
+  <li>Scalability: supporting large numbers of concurrent real-time sessions</li>
+</ul>
+
+  <h3>App Safety - Android Review Platform</h3>
+  <p>I was the team lead for the review platform used by 2,400+ human agents reviewing over 1M monthly app reviews.
+    While supporting these users, without interruption, I led the in-place migration from GWT (Java) to Angular with no interruption of service.
+    In order to do this (with a team of contractors), I enforced a rigid separation of model logic & view logic.  All model logic remained in Java, but was transpiled to ClosureJS
+    with a custom communication layer to the view logic.  This made it so we could preserve all business logic & existing unit tests and focus 
+    only on converting the UI implementation to Angular.
+  </p>
+  <p><b>Impact:</b> Enabled seamless migration of a critical system with zero downtime while increasing development velocity.</p>
   
-  <h3>Medical Imaging</li>
+  <h3>Medical Imaging (Google Brain)</h3>
+  <p>I led the Frontend team for Google Brain's pathology research.  To train AI models for cancer research, we needed to acquire huge amounts
+    of training data from experts in the field.  To do this, I designed and built a imaging platform with annotation tools used by contracted 
+    Pathologists across the country.  This platform's imaging is like a Google Maps for tissue samples, allowing the user to pan/zoom and annotate 
+    cells and regions.
+  </p>
+
+  <h2>Side Projects</h2>
     
-  <h3>Damml (C++ ML Library)
+  <h3>Damml (C++ ML Library) </h3>
+  <a href="https://github.com/gammagec/damml">Github Repo</a>
+  <p>In order to learn LLMs better, I started following Andrej Karpathy's <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY">"Let's build GPT: from scratch"</a>.  
+  However, I thought it would be more interesting to build the whole thing in C++.  This would force me to <b>really</b> understand the implementation and not 
+  just copy the python code.  The resulting heavily templated C++ code was able to train on the MNIST dataset with a 98% accuracy.</p>
 
   <h2>Hobbies</h2>
   <ul>
     <li>Microscopy</li>
     <li>3d Printing</li>
     <li>Woodworking</li>
-    <li>CAD Design</li>    
+    <li>CAD Design</li>
+    <li>Electronics & Microprocessors</li>
+    <li>Table top RPG</li>
   </ul>
 </body>
 </html>
